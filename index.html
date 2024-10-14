@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand d-flex" href="#">
+                <img src="./images/logo@2x.png" alt="" class="logo">
+                <div class="logo-type ms-3">
+                    <h1 class="site-title h5 text-white m-0">Weather</h1>
+                    <small class="site-description text-white">tagline goes here</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa-solid fa-bars"></span>
+            </button>
+   
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Live Cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Photo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="hero" data-bs-theme="dark">
+        <div class="container">
+            <div class="input-container mb-5">
+                <input type="search" placeholder="Find your location..."
+                    class="form-control search-btn textInput search-input">
+                <button class="btn btn-primary clearButton">Find</button>
+            </div>
+            <div class="forecast-table">
+                <div class="row forecast-container">
+                    <!-- & Today data -->
+                    <div class="col-lg-4 col-12">
+                        <div class="forecast-header d-flex justify-content-between">
+                            <div class="today"></div>
+                            <span>
+                                <span class="month-day"></span>
+                                <span class="month-name"></span>
+                            </span>
+                        </div>
+                        <div class="forecast-content" id="current">
+                            <div class="location"></div>
+                            <div class="degree d-flex justify-content-between flex-wrap">
+                                <div class="num"><sup>o</sup>C</div>
+                                <div class="forecast-icon">
+                                    <img src="./images/113.png" alt="" width="70" class="today-condition-img">
+                                </div>
+                            </div>
+                            <div class="today-custom">Sunny</div>
+                            <div class="icons d-flex">
+                                <span><img src="./images/icon-umberella.png" alt=""><span
+                                        class="humidity"></span></span>
+                                <span><img src="./images/icon-wind.png" alt=""><span class="wind"></span></span>
+                                <span><img src="./images/icon-compass.png" alt=""><span class="wind-dir"></span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--* Tomorrow-->
+                    <div class=" col-lg-4 col-12">
+                        <div class="forecast">
+                            <div class="forecast-header forecast-bg-header text-center">
+                                <div class="next-day"></div>
+                            </div>
+                            <div class="forecast-content forecast-bg-content text-center">
+                                <div class="forecast-icon">
+                                    <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="" width="48"
+                                        class="next-condition-img">
+                                </div>
+                                <div class="max-temp degree"><sup>o</sup>C</div>
+                                <small class="min-temp"><sup>o</sup></small>
+                                <div class="next-custom"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ^ after tomorrow -->
+                    <div class=" col-lg-4 col-12">
+                        <div class="forecast">
+                            <div class="forecast-header text-center">
+                                <div class="next-day"></div>
+                            </div>
+                            <div class="forecast-content text-center">
+                                <div class="forecast-icon">
+                                    <img src="https://cdn.weatherapi.com/weather/64x64/day/113.png" alt="" width="48"
+                                        class="next-condition-img">
+                                </div>
+                                <div class="max-temp degree"><sup>o</sup>C</div>
+                                <small class="min-temp"><sup>o</sup></small>
+                                <div class="next-custom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 me-5">
+                        <form action="#" class="subscribe-form">
+                            <div class="input-container mb-5">
+                                <input type="search" placeholder="Enter your email to Subscribe..."
+                                    class="form-control search-btn textInput search-input">
+                                <button class="btn btn-primary clearButton">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="social-links mb-3">
+                            <a href="#"><i class=" fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class=" fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class=" fa-brands fa-google-plus-g"></i></a>
+                            <a href="#"><i class=" fa-brands fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="colophon text-white fs-6">Copyright 2014 Company name. Designed by Themezy. All rights
+                    reserved</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
